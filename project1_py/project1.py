@@ -14,6 +14,7 @@ Note: Do not import any other modules here.
 '''
 import numpy as np
 
+alpha_table = {'simple1': 0.00056, 'simple2': 0.01, 'simple3': 0.001, 'secret1': 0.01, 'secret2': 0.01}
 
 def optimize(f, g, x0, n, count, prob):
     """
@@ -29,6 +30,15 @@ def optimize(f, g, x0, n, count, prob):
     Returns:
         x_best (np.array): best selection of variables found
     """
-    x_best = x0
+    x_hist = [x0]
+    if prob == 'simple1' or prob == 'simple2' or prob == 'simple3':
+        x_hist = gradient_descent(f,g,x0,n,count, prob)
+    return x_hist[-1]
 
-    return x_best
+
+def gradient_descent(f,g,x0,n,count, prob):
+    alpha = alpha_table[prob]
+    x_hist = [x0]
+    while count() < n:
+        x_hist.append(x_hist[-1] - alpha * g(x_hist[-1]))
+    return x_hist
