@@ -14,7 +14,7 @@ Note: Do not import any other modules here.
 '''
 import numpy as np
 
-alpha_table = {'simple1': 0.00056, 'simple2': 0.01, 'simple3': 0.001, 'secret1': 0.001, 'secret2': 0.001}
+alpha_table = {'simple1': 0.00056, 'simple2': 0.01, 'simple3': 0.001, 'secret1': 0.001, 'secret2': 0.02}
 
 def optimize(f, g, x0, n, count, prob):
     """

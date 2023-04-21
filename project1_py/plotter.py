@@ -16,10 +16,18 @@ def main():
 	fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
 	ax2.plot(f_hist_1)
 	ax2.set_title('Simple1 Convergence Plot')
+	ax2.set_xlabel('Iterations')
+	ax2.set_ylabel('Value')
+
 	ax3.plot(f_hist_2)
 	ax3.set_title('Simple2 Convergence Plot')
+	ax3.set_xlabel('Iterations')
+	ax3.set_ylabel('Value')
+
 	ax4.plot(f_hist_3)
 	ax4.set_title('Simple3 Convergence Plot')
+	ax4.set_xlabel('Iterations')
+	ax4.set_ylabel('Value')
 
 	
 	contourSize = [50,50]
